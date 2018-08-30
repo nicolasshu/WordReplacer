@@ -327,6 +327,9 @@ def UndoShortcut(event):
     except:
         print('This is the original! Can\'t Undo!')
         step = 0
+# ------------------------------------------------------------------------------
+def FocusOnText(event):
+    T.focus_set()
 ################################################################################
 # GRAPHIC USER INTERFACE
 ################################################################################
@@ -357,6 +360,9 @@ master.bind('<Control-Key-O>',OpenFileShortcut)
 master.bind('<Return>',Debug)
 master.bind('<Escape>',ClearHighlights)
 master.bind('<Control-Key-z>',UndoShortcut)
+
+# Stupid command for Macs. Why are Macs so difficult?
+master.bind('<ButtonPress-1',FocusOnText)
 # Text Widget ------------------------------------------------------------------
 T = CustomText(master, height=50, width=60, font=(typeface,font_size),exportselection=True)
 T.pack(side=tk.LEFT,expand=True,fill='both')
