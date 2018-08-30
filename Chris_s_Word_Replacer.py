@@ -264,9 +264,10 @@ class CustomText(tk.Text):
             self.tag_add(tag, "matchStart", "matchEnd")
 # ------------------------------------------------------------------------------
 def WindowClose():
+    global mainString
     window.destroy()
     GetThisPosition()
-    PutTextBackIn()
+    PutTextBackIn(mainString)
     ResetLastPosition()
 # ------------------------------------------------------------------------------
 def GetThisPosition():
@@ -305,8 +306,9 @@ def ClickOnWordShortcut(event):
     ClickOnWord()
 # ------------------------------------------------------------------------------
 def ClearHighlights(event):
+    global mainString
     GetThisPosition()
-    PutTextBackIn()
+    PutTextBackIn(mainString)
     ResetLastPosition()
 # ------------------------------------------------------------------------------
 def ResetLastPositionShortcut(event):
@@ -319,10 +321,12 @@ def WindowCloseShortcut(event):
     WindowClose()
 # ------------------------------------------------------------------------------
 def UndoShortcut(event):
+    global step
     try:
         Undo()
     except:
         print('This is the original! Can\'t Undo!')
+        step = 0
 ################################################################################
 # GRAPHIC USER INTERFACE
 ################################################################################
