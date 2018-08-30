@@ -362,7 +362,7 @@ master.bind('<Escape>',ClearHighlights)
 master.bind('<Control-Key-z>',UndoShortcut)
 
 # Stupid command for Macs. Why are Macs so difficult?
-master.bind('<ButtonPress-1',FocusOnText)
+master.bind('<ButtonPress-1>',FocusOnText)
 # Text Widget ------------------------------------------------------------------
 T = CustomText(master, height=50, width=60, font=(typeface,font_size),exportselection=True)
 T.pack(side=tk.LEFT,expand=True,fill='both')
